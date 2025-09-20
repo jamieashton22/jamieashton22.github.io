@@ -1,3 +1,4 @@
+/* === General Styles === */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,29 +8,115 @@ body {
     color: #333;
 }
 
-header {
-    background-color: #005f73;
-    color: #fff;
-    padding: 20px 0;
-    text-align: center;
-}
-
-nav a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-}
-
-main {
-    padding: 20px;
-    max-width: 900px;
-    margin: auto;
-}
-
 h1, h2, h3 {
     color: #0a9396;
 }
 
+/* === Header === */
+header {
+    background-color: #005f73;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+header p {
+    margin: 5px 0 15px;
+    font-size: 1.1rem;
+    color: #e0fbfc;
+}
+
+/* === Navigation === */
+nav {
+    margin-top: 10px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.2s ease-in-out;
+}
+
+nav a:hover {
+    color: #94d2bd;
+}
+
+/* === Main Content === */
+main {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Section Headings */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* === Project Cards (Homepage) === */
+.project-card {
+    background: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.project-card h3 {
+    margin-top: 0;
+}
+
+/* Optional project image */
+.project-img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* === Project Links (buttons) === */
+.project-links {
+    margin-top: 15px;
+}
+
+.project-links a {
+    display: inline-block;
+    margin: 5px 10px 0 0;
+    padding: 8px 14px;
+    background: #0a9396;
+    color: #fff;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s ease-in-out;
+}
+
+.project-links a:hover {
+    background: #005f73;
+}
+
+/* === Project Boxes (used on some pages) === */
 .project {
     background-color: #e9ecef;
     padding: 15px;
@@ -37,6 +124,7 @@ h1, h2, h3 {
     border-radius: 8px;
 }
 
+/* === Results Images (project pages) === */
 .result-img {
     display: block;
     max-width: 700px;
@@ -46,6 +134,7 @@ h1, h2, h3 {
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
 
+/* === Results Table (project pages) === */
 .results-table {
     width: 100%;
     border-collapse: collapse;
@@ -76,9 +165,33 @@ h1, h2, h3 {
     background-color: #f1f1f1;
 }
 
+/* === Footer === */
 footer {
     background-color: #005f73;
     color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 15px;
+    margin-top: 40px;
+}
+
+footer a {
+    color: #94d2bd;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* === Responsive Design === */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .project-card {
+        padding: 15px;
+    }
 }

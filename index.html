@@ -8,11 +8,13 @@
 </head>
 <body>
     <header>
-        <h1>Jamie Ashton - Engineering Projects </h1>
+        <h1>Jamie Ashton - Engineering Projects</h1>
         <p>A place to showcase my personal engineering projects</p>
         <nav>
-            <a href="index.html">Home</a> |
-            <a href="about.html">About</a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
         </nav>
     </header>
 
@@ -20,26 +22,44 @@
         <section id="projects">
             <h2>Projects</h2>
 
-            <div class="project">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <!-- Optional thumbnail -->
+                <!-- <img src="images/uart_thumbnail.png" alt="UART Project Thumbnail" class="project-img"> -->
                 <h3>Custom UART Protocol for Sensor Data Acquisition</h3>
-                <p>Designing and implementing a custom communication protocol over UART to transmit sensor data from an Arduino microcontroller to a PC.</p>
-                <p><strong>Skills - </strong> Serial Communications, Embedded Systems, C++</p>
-                <a href="uartproject.html">Project Page</a> 
-                <a href="https://github.com/jamieashton22/custom-UART-protocol" target="_blank">View on GitHub</a>
+                <p>
+                    Designing and implementing a custom communication protocol over UART 
+                    to transmit sensor data from an Arduino microcontroller to a PC.
+                </p>
+                <p><strong>Skills:</strong> Serial Communications, Embedded Systems, C++</p>
+                <div class="project-links">
+                    <a href="uartproject.html">Project Page</a>
+                    <a href="https://github.com/jamieashton22/custom-UART-protocol" target="_blank">View on GitHub</a>
+                </div>
             </div>  
 
-            <div class="project">
+            <!-- Project 2 -->
+            <div class="project-card">
+                <!-- Optional thumbnail -->
+                <!-- <img src="images/sensor_thumbnail.png" alt="Sensor Filtering Project Thumbnail" class="project-img"> -->
                 <h3>Improving Sensor Accuracy with Real-Time Digital Filtering</h3>
-                <p>Implementing digital-filtering techniques (SMA, EMA, Median) to improve the accuracy and reliability of distance measurements from an ultrasonic sensor.</p>
-                <p><strong>Skills - </strong> Signal Processing, Embedded Systems, C++ </p>
-                <a href="sensorproject.html">Project Page</a> 
-                <a href="https://github.com/jamieashton22/ultrasonic-filtering" target="_blank">View on GitHub</a>
+                <p>
+                    Implementing digital-filtering techniques (SMA, EMA, Median) to improve the 
+                    accuracy and reliability of distance measurements from an ultrasonic sensor.
+                </p>
+                <p><strong>Skills:</strong> Signal Processing, Embedded Systems, C++</p>
+                <div class="project-links">
+                    <a href="sensorproject.html">Project Page</a>
+                    <a href="https://github.com/jamieashton22/ultrasonic-filtering" target="_blank">View on GitHub</a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p></a>.</p>
+        <p>© 2025 Jamie Ashton | 
+           <a href="https://www.linkedin.com/in/jamie-ashton-50584532b/" target="_blank">LinkedIn</a>
+        </p>
     </footer>
 </body>
 </html>
