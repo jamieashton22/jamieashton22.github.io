@@ -102,6 +102,41 @@
             </p>
             <img src="images/sensorproject/EMAa0.2.png" alt="EMA filter results" class="result-img">
 
+            <table class="results-table">
+    <thead>
+        <tr>
+            <th>Metric</th>
+            <th>Unfiltered</th>
+            <th>alpha = 0.2</th>
+            <th>alpha = 0.5</th>
+            <th>alpha = 0.8</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Standard Deviation (cm)</td>
+            <td>0.05</td>
+            <td>0.01</td>
+            <td>0.02</td>
+            <td>0.04</td>
+        </tr>
+        <tr>
+            <td>Peak-to-Peak (cm)</td>
+            <td>0.12</td>
+            <td>0.04</td>
+            <td>0.08</td>
+            <td>0.11</td>
+        </tr>
+        <tr>
+            <td>SNR</td>
+            <td>139</td>
+            <td>814</td>
+            <td>345</td>
+            <td>195</td>
+        </tr>
+    </tbody>
+</table>
+
             <h3>Median Filter</h3>
             <p>
                 This filter smooths data by sorting a window of n recent measurements and taking the median 
@@ -109,6 +144,85 @@
                 preserving sharp changes in the signal, but large window sizes (n) can cause delay in the response.
             </p>
             <img src="images/sensorproject/median13.png" alt="Median filter results" class="result-img">
+
+            <table class="results-table">
+    <thead>
+        <tr>
+            <th>Metric</th>
+            <th>Unfiltered</th>
+            <th>k = 5</th>
+            <th>k = 10</th>
+            <th>k = 15</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Standard Deviation (cm)</td>
+            <td>0.05</td>
+            <td>0.01</td>
+            <td>0.01</td>
+            <td>0.01</td>
+        </tr>
+        <tr>
+            <td>Peak-to-Peak (cm)</td>
+            <td>0.12</td>
+            <td>0.05</td>
+            <td>0.03</td>
+            <td>0.03</td>
+        </tr>
+        <tr>
+            <td>SNR</td>
+            <td>139</td>
+            <td>881</td>
+            <td>1054</td>
+            <td>1078</td>
+        </tr>
+    </tbody>
+</table>
+
+            <h3>Exponential Moving Average (EMA)</h3>
+            <p>
+                This filter smooths data by applying a weighted average where recent measurements are given 
+                more weighting than older ones. This weighting is controlled by a smoothing parameter alpha. 
+                Small alpha produces stronger smoothing but more lag, large alpha means less smoothing but 
+                less lag.
+            </p>
+            <img src="images/sensorproject/EMAa0.2.png" alt="EMA filter results" class="result-img">
+
+            <table class="results-table">
+    <thead>
+        <tr>
+            <th>Metric</th>
+            <th>Unfiltered</th>
+            <th>n = 5</th>
+            <th>n = 9</th>
+            <th>n = 13</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Standard Deviation (cm)</td>
+            <td>0.05</td>
+            <td>0.03</td>
+            <td>0.04</td>
+            <td>0.02</td>
+        </tr>
+        <tr>
+            <td>Peak-to-Peak (cm)</td>
+            <td>0.12</td>
+            <td>0.12</td>
+            <td>0.12</td>
+            <td>0.11</td>
+        </tr>
+        <tr>
+            <td>SNR</td>
+            <td>139</td>
+            <td>274</td>
+            <td>330</td>
+            <td>399</td>
+        </tr>
+    </tbody>
+</table>
         </section>
 
         <section>
