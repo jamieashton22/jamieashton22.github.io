@@ -25,9 +25,11 @@
                 when used in larger systems.
             </p>
             <p>
-                The purpose of this project was to improve the accuracy of an HC-SR04 ultrasonic 
-                sensor by using common real-time digital filtering techniques. These were a 
-                simple moving average (SMA), exponential moving average (EMA), and median filter.
+                The purpose of this project was to create a modular set of classes for a few digital filters 
+                that can be reused in future projects.
+                These were a simple moving average (SMA), exponential moving average (EMA), and median filter.
+                To demonstrate these filters and check the classes are working as intended, I aimed to improve 
+                the accuracy of an HC-SR04 ultrasound sensor.
             </p>
         </section>
 
@@ -35,8 +37,7 @@
             <h2>Implementation</h2>
             <p>
                 The hardware used was minimal, just an HC-SR04 ultrasound sensor and an Arduino Nano. 
-                Separate classes were created for each filter. These classes are modular, and the intention 
-                is for me to be able to reuse them in future projects.
+                Separate classes were created for each filter.
             </p>
             <p>
                 To show the filters in action, I created a Python script to plot the filtered and unfiltered 
@@ -92,6 +93,12 @@
         </tr>
     </tbody>
 </table>
+
+            <p>
+                The SMA filter clearly was effective in noise reduction, the standard deviation of the signal fell 
+                from 0.05 cm to 0.01 cm, and the signal-to-noise ratio improved nearly 8x.
+                The SMA seems optimal for this task, despite its simple implementation.
+            </p>
 
             <h3>Exponential Moving Average (EMA)</h3>
             <p>
