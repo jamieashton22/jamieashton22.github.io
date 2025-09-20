@@ -144,12 +144,25 @@
     </tbody>
 </table>
 
+            <p>
+                The EMA filter was also effective in noise reduction, and the difference in effect for different alpha values is clear.
+                For example with alpha = 0.8, the SNR was only improved by 40%, but with a much lower alpha of 0.2 there is more smoothing 
+                and the SNR improves nearly 6x. 
+                Tuning is needed to find the best value of alpha that doesnt introduce too much lag to the system. 
+            </p>
+
             <h3>Median Filter</h3>
             <p>
                 This filter smooths data by sorting a window of n recent measurements and taking the median 
                 value as the output. It is highly effective at rejecting outliers, but large window sizes (n) can cause delay in the response.
             </p>
-            <img src="images/sensorproject/median13.png" alt="Median filter results" class="result-img">
+            <img src="images/sensorproject/median13.png" alt="Median filter results" class="result-img">   
+
+            <p>
+                The median filter is best for outlier rejection, making it suitable for sensors prone to sudden spikes. 
+                However it didn't improve the SNR as much as the SMA or EMA.
+                Maybe a different demonstration/experiment would be better suited to show this filter.
+            </p>
 
             <table class="results-table">
     <thead>
@@ -186,6 +199,24 @@
     </tbody>
 </table>
         </section>
+
+        <section>
+            <h2>Conclusion and Future Work</h2>
+            <p>
+
+                All three filters significantly improved measurement stability.
+                Overall I think the best way to effectively process these signals would be to pass them through the median filter first,
+                in order to reject outliers/sudden disturbances, and then apply a Simple Moving Average, to smooth out noise. As these filters 
+                are lightweight and not computationally intensive, this would work well in embedded systems applications.
+
+                Future work on this project will involve creating more advanced filters, such as a Kalman filter,
+                testing these filters with different sensors, and applying them in a closed-loop control system. 
+            </p>
+            <p>
+              
+            </p>
+        </section>
+
 
         <section>
             <h2>Source Code</h2>
