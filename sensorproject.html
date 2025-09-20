@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improving Sensor Accuracy with Real-Time Digital Filtering</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Improving Sensor Accuracy with Real-Time Digital Filtering</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Objectives</h2>
+            <p>
+                Low-cost sensors like the HC-SR04 ultrasonic sensor are accessible and easy to use, 
+                but often their raw readings are prone to noise and spikes/outliers. 
+                Taking raw, unfiltered signals from these devices can have negative consequences 
+                when used in larger systems.
+            </p>
+            <p>
+                The purpose of this project was to improve the accuracy of an HC-SR04 ultrasonic 
+                sensor by using common real-time digital filtering techniques. These were a 
+                simple moving average (SMA), exponential moving average (EMA), and median filter.
+            </p>
+        </section>
+
+        <section>
+            <h2>Implementation</h2>
+            <p>
+                The hardware used was minimal, just an HC-SR04 ultrasound sensor and an Arduino Nano. 
+                Separate classes were created for each filter. These classes are modular, and the intention 
+                is for me to be able to reuse them in future projects.
+            </p>
+            <p>
+                To show the filters in action, I created a Python script to plot the filtered and unfiltered 
+                data in real time and to calculate metrics such as SNR and standard deviation. An object was 
+                placed at a set distance, and the raw unfiltered signal was analysed. Then I added each of 
+                the filters in turn.
+            </p>
+        </section>
+
+        <section>
+            <h2>Filters</h2>
+
+            <h3>Simple Moving Average (SMA)</h3>
+            <p>
+                This filter smooths data by averaging a set number of previous measurements within a defined 
+                window size. This helps with noise reduction and is simple to implement. However, large 
+                window sizes can introduce significant delay to the signal.
+            </p>
+            <p><em>[results table and pictures here]</em></p>
+
+            <h3>Exponential Moving Average (EMA)</h3>
+            <p>
+                This filter smooths data by applying a weighted average where recent measurements are given 
+                more weighting than older ones. This weighting is controlled by a smoothing parameter alpha. 
+                Small alpha produces stronger smoothing but more lag, large alpha means less smoothing but 
+                less lag.
+            </p>
+            <p><em>[results table and pictures here]</em></p>
+
+            <h3>Median Filter</h3>
+            <p>
+                This filter smooths data by sorting a window of n recent measurements and taking the median 
+                value as the output. It is highly effective at rejecting outliers and impulsive noise while 
+                preserving sharp changes in the signal, but large window sizes (n) can cause delay in the response.
+            </p>
+            <p><em>[results table and pictures here]</em></p>
+        </section>
+
+        <section>
+            <h2>Source Code</h2>
+            <p>
+                The full implementation, including Arduino classes and Python script, 
+                is on the GitHub repository below:
+            </p>
+            <a href="https://github.com/jamieashton22/ultrasonic-filtering" target="_blank">View on GitHub</a>
+        </section>
+    </main>
+
+    <footer>
+        <p></p>
+    </footer>
+</body>
+</html>
