@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating a Bare-Metal RTOS for STM32</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Creating a Bare-Metal RTOS for STM32</h1>
+        <nav>
+            <a href="index.html">Home</a> |
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Overview</h2>
+            <p>The aim of this project is to create a 'mini RTOS' for STM32 from scratch without using any hardware-abstraction.
+                Essentially I am aiming to create a pre-emptive kernel including features like context-switching, task scheduling 
+                and possibly semaphores This will be written for and demonstrated on the STM32 Nucleo-F401RE. I am hoping that this will
+                give me good knowledge in embedded C, the STM32 microcontroller family and the Arm architecture.
+            </p>
+
+            <p> I am expecting this project to take a long time, as I have to prioritise university coursework, exams, 
+                and my individual third-year project. As such I will use this page to list any milestones/steps I complete.
+            </p>
+           
+            <h2> As of 02/10/25 </h2>
+            <ul>
+                <li>Configured interrupts with the SysTick timer and used it to blink an LED.</li>
+                <li>Used the SysTick timer to create a general timebase (1ms).</li>
+                <li>Created a blocking delay function using this timebase.</li>
+                <li> Implemented non-blocking delays using this timebase by polling.</li>
+            </ul>
+
+        </section>
+
+        
+        <section>
+            <a href="https://github.com/jamieashton22/stm-rtos" target="_blank">View on GitHub</a>
+        </section>
+    </main>
+
+    <footer>
+        <p>October 2025 Jamie Ashton</p>
+    </footer>
+</body>
+</html>
