@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creating a Bare-Metal RTOS for STM32</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Syntax highlighting -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
 <body>
     <header>
@@ -28,7 +32,7 @@
                 and my individual third-year project. As such I will use this page to list any milestones/steps I complete.
             </p>
            
-            <h2> As of 02/10/25 </h2>
+            <h2> As of 06/10/25 </h2>
             <ul>
                 <li>Configured interrupts with the SysTick timer and used it to blink an LED.</li>
                 <li>Used the SysTick timer to create a general timebase (1ms).</li>
@@ -53,7 +57,7 @@
                 Tasks are stored in an array of a fixed size. Priorities are given to the tasks by the order in which they appear in the array.
             </p>
 
-            <pre> <code> 
+            <pre> <code class="language-cpp"> 
 
                 #define TOTAL_TASKS 3
 
@@ -75,7 +79,7 @@
                 with that number. This helps to make the scheduler robust and tasks stay in sync with real time even if loop execution time changes.
             </p>
 
-            <pre> <code>
+            <pre> <code class="language-cpp">
             void scheduler(void){
 
                 static uint32_t last_time = 0;
