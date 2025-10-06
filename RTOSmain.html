@@ -34,7 +34,68 @@
                 <li>Used the SysTick timer to create a general timebase (1ms).</li>
                 <li>Created a blocking delay function using this timebase.</li>
                 <li> Implemented non-blocking delays using this timebase by polling.</li>
+                <li> Created simple cooperative, non-preemptive scheduler</li>
             </ul>
+
+        </section>
+
+        <section> 
+            <h2> Simple Cooperative Scheduler </h2> 
+            <p> 
+                A big foundational step towards building a custom RTOS was moving from delays to a simple non-preemptive scheduler.
+                I replaced delay loops with a cooperative task system, this allowed multiple functions to run at independent delays 
+                using the shared timebase from SysTick. These tasks have to be periodic.
+            </p>
+
+            <p> 
+                The SysTick timer generates an interrupt every 1ms, maintaning a timebase. Tasks are represented by a Task Control Block,
+                containing the tasks period, a function pointer pointing to the function the task will execute, and the time elapsed since the last execution.
+                Tasks are stored in an array of a fixed size. Priorities are given to the tasks by the order in which they appear in the array.
+            </p>
+
+            <pre> <code> 
+
+                #define TOTAL_TASKS 3
+
+                typedef struct TaskType{				// Task Control Block structure (TCB)
+
+	                uint32_t period;		// time between runs
+	                uint32_t elapsedTime;	// time since last run
+	                void (*TaskPtr)(void);	// function ptr points to task function
+                } TaskType ;
+
+                extern TaskType TaskList[TOTAL_TASKS];  // references array holding the tasks
+
+            </code></pre>
+
+            <p> 
+                The scheduler function is called in the main loop. It iterates through each task in the list. 
+                For each task, if that tasks elapsed time is greater than its period, the task is executed and elapsed time 
+                is reset. The scheduler function also computes how many ms have passed since the last call and updates elapsed time
+                with that number. This helps to make the scheduler robust and tasks stay in sync with real time even if loop execution time changes.
+            </p>
+
+            <pre> <code>
+            void scheduler(void){
+
+                static uint32_t last_time = 0;
+                uint32_t now = systick_ms;
+                uint32_t time_difference = now - last_time;
+                last_time = now;
+
+                uint8_t i = 0;
+                for (i=0; i<TOTAL_TASKS; i++){	
+
+                    if(TaskList[i].elapsedTime >= TaskList[i].period){	// if elapsed time > period
+
+                        TaskList[i].TaskPtr();		// call the tasks function
+                        TaskList[i].elapsedTime = 0;	// reset elapsed time
+                    }
+                    TaskList[i].elapsedTime += time_difference;
+                }
+            }
+
+            </code> </pre>
 
         </section>
 
