@@ -69,6 +69,19 @@ h2 {
     margin-bottom: 20px;
 }
 
+pre code {
+    display: block;
+    background-color: #1e1e1e;
+    color: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 15px 0;
+}
+
 /* === Project Cards (Homepage) === */
 .project-card {
     background: #fff;
@@ -203,17 +216,4 @@ footer a:hover {
     .project-card {
         padding: 15px;
     }
-}
-
-pre code {
-    display: block;
-    background-color: #1e1e1e;
-    color: #f4f4f4;
-    padding: 15px;
-    border-radius: 8px;
-    overflow-x: auto;
-    font-family: "Courier New", monospace;
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin: 15px 0;
 }
